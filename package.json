@@ -1,0 +1,46 @@
+{
+ "name": "map-export-check",
+ "version": "1.0.0",
+ "description": "A simple cli tool that checks if the export map defined in a `package.json` file is correct and that the referenced files/folders exist.",
+ "main": "src/index.js",
+ "bin": "src/cli.js",
+ "directories": {
+  "test": "mocha --extesion json --watch-files test/,src/ test/*.test.js"
+ },
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "keywords": [
+  "Checker",
+  "Map Export"
+ ],
+ "author": "Mike Ludemann",
+ "license": "MIT",
+ "prettier": {
+  "useTabs": true,
+  "trailingComma": "all",
+  "arrowParens": "avoid"
+ },
+ "lint-staged": {
+  "**/*.{js,jsx,ts,tsx,json}": [
+   "prettier --write"
+  ]
+ },
+ "husky": {
+  "hooks": {
+   "pre-commit": "lint-staged"
+  }
+ },
+ "dependencies": {
+  "kolorist": "^1.2.3",
+  "mri": "^1.1.6"
+ },
+ "devDependencies": {
+  "@types/mocha": "^8.0.3",
+  "@types/node": "^14.11.2",
+  "husky": "^4.3.0",
+  "lint-staged": "^10.4.0",
+  "mocha": "^8.1.3",
+  "prettier": "^2.1.2"
+ }
+}
